@@ -22,8 +22,3 @@ button {
   padding: 8px 12px;
   cursor: pointer;
 }
-
-.js-animal-list {
-  display: flex;
-  list-style: none;
-}

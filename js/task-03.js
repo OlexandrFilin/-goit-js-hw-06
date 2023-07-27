@@ -21,6 +21,8 @@ function addAnimal(arrImag) {
   });
 }
 
-const galeryEl = document.querySelector(".gallery");
-galeryEl.classList.add("js-animal-list");
-galeryEl.insertAdjacentHTML("afterbegin", addAnimal(images));
+const galleryElm = document.querySelector(".gallery");
+galleryElm.style.display = "flex"; //    display: flex;
+galleryElm.style.listStyle = "none"; //list-style: none;
+//galleryElm.classList.add("js-animal-list");
+galleryElm.insertAdjacentHTML("afterbegin", addAnimal(images));
