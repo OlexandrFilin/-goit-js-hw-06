@@ -15,9 +15,7 @@ const images = [
 
 function addAnimal(arrImag) {
   return arrImag.map(({ url, alt }) => {
-    return `<li  class="item">
-    <img src="${url}" alt="${url}" width = '300'> 
-    </li>`;
+    return `<li  class="item"><img src="${url}" alt="${url}" width = '300'></li>`;
   });
 }
 
@@ -25,4 +23,5 @@ const galleryElm = document.querySelector(".gallery");
 galleryElm.style.display = "flex"; //    display: flex;
 galleryElm.style.listStyle = "none"; //list-style: none;
 //galleryElm.classList.add("js-animal-list");
-galleryElm.insertAdjacentHTML("afterbegin", addAnimal(images));
+console.log(addAnimal(images));
+galleryElm.insertAdjacentHTML("afterbegin", addAnimal(images).join(""));
