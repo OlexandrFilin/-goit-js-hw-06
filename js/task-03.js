@@ -15,13 +15,14 @@ const images = [
 
 function addAnimal(arrImag) {
   return arrImag.map(({ url, alt }) => {
-    return `<li  class="item"><img src="${url}" alt="${url}" width = '300'></li>`;
+    return `<li  class="item" style = "border: 2px solid black"   ><img src="${url}" alt="${url}" width = '300'></li>`;
   });
 }
 
 const galleryElm = document.querySelector(".gallery");
 galleryElm.style.display = "flex"; //    display: flex;
 galleryElm.style.listStyle = "none"; //list-style: none;
+galleryElm.style.gap = "10px";
 //galleryElm.classList.add("js-animal-list");
 console.log(addAnimal(images));
 galleryElm.insertAdjacentHTML("afterbegin", addAnimal(images).join(""));
