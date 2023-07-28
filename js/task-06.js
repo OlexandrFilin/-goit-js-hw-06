@@ -1,16 +1,20 @@
 const inpElm = document.querySelector("#validation-input");
 inpElm.addEventListener("blur", enterValue);
+
+function replaceClass(elm, oldClass, newClass) {
+  if (elm.classList.contains(oldClass)) {
+    elm.classList.remove(oldClass);
+  }
+  elm.classList.add(newClass);
+}
+
 function enterValue(evt) {
   const inpEl = evt.currentTarget;
   if (inpEl.value.length !== Number(inpEl.dataset.length)) {
-    if (inpEl.classList.contains("valid")) {
-      inpEl.classList.remove("valid");
-    }
-    inpEl.classList.add("invalid");
+    //перше значення ЕЛЕМЕНТ друге значення клас для видалення, третє значення новий клас
+    replaceClass(inpEl, "valid", "invalid");
+
     return;
   }
-  if (inpEl.classList.contains("invalid")) {
-    inpEl.classList.remove("invalid");
-  }
-  inpEl.classList.add("valid");
+  replaceClass(inpEl, "invalid", "valid");
 }
